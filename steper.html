@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .progeress_container{
+        position: relative;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+    .circles_container {
+      
+        width:80%;
+        display: flex;
+        justify-content: space-between; 
+        /* background-color: pink; */
+        overflow: hidden;
+    }
+    
+
+    .circles_container div{
+     width:40px;
+      height: 40px;
+      background-color: white;
+      border-radius: 50%;
+      border:2px solid gray;
+      position: relative;
+      z-index: 1;
+    
+    }
+    
+    .progeress_container:after{
+        content: "";
+        position: absolute;
+        height:3px;
+        width:80%;
+        background-color: grey;
+        top:50%;
+      
+    }
+    .hidden{
+        display: none;
+    }
+    .page_slider{
+        width:80%;
+      
+        height:calc(100vh - 150px);
+        margin: auto;
+    }
+    #iframe_steper{
+        border: none;
+        width:100%;
+        height:100%;
+    }
+    .btn_container{
+            display: flex;
+            justify-content: space-between;
+            width:50%;
+            margin: auto;
+    }
+    .btn_container button {
+            width:15%;
+            background-color: green;
+            padding:.5rem;
+            border:none;
+            color:white;
+            border-radius: 3px;;
+    }
+</style>
+<body>
+    <div class="progeress_container">
+        <div class="circles_container">
+            <div></div>
+            <div></div>
+            <div></div>
+           
+        </div>
+    </div>
+    <div class="page_slider">
+        <iframe  src="user_info.html" id="iframe_steper">
+            <p>Your browser does not support iframes.</p>
+          </iframe>
+       
+        <!-- <div id="user_info">
+            <form action="">
+            <input type="text" name="" id=""> your name
+          </form>
+         </div> -->
+    </div>
+    <div class="btn_container">
+        <button id="prev">prev
+        </button>
+        <button id="next">next
+        </button>
+    </div>
+   
+    
+    <div id="user_info " class="hidden">
+            <form action="">
+            <input type="text" name="" id=""> your name
+           </form>
+    </div>
+    <div id="payment " class="hidden">
+            <form action="">
+                <input type="text" name="" id=""> payment
+            </form>
+    </div>
+    <div id="confirm_operation " class="hidden">
+        <form action="">
+            <input type="text" name="" id=""> confirm_operation
+        </form>
+</div>
+
+
+
+
+
+</body>
+<script>
+
+    var iframe_steper = document.getElementById("iframe_steper");
+    var circles =document.querySelectorAll(".circles_container div");
+        var prev =document.getElementById("prev");
+        var page_slider =document.querySelector(".page_slider");
+        var btn_container =document.querySelector(".btn_container");
+
+       var next =document.getElementById("next");
+    //    iframe_steper.srcdoc="<p>Hello world!</p>";
+       var iframe_conter=0;
+       var counter = 0;
+       var pages_id_s=[ "payment.html","confirm_operation.html","done.html"];
+       next.onclick=function(){
+        counter++;
+           if(counter>=circles.length){
+
+            counter=circles.length;
+           }
+           step_item();
+        
+           iframe_steper.src=pages_id_s[counter-1];
+           
+       }
+       prev.onclick=function(){
+         counter--;
+           if(counter<=0){
+
+            counter=0;
+
+           }
+           console.log(counter);if(counter<=0){
+            iframe_steper.src="user_info.html";
+           }
+           else{
+            iframe_steper.src=pages_id_s[counter-1];
+           }
+       
+           
+           step_item();
+        //    if(conter<=0){
+        //     iframe_steper.src="index.html";
+        //    }
+        //    else{
+        //     iframe_steper.src=pages_id_s[counter-1];
+        //    }
+       
+     
+       }
+
+function step_item(){
+    circles.forEach((circle,i)=>{
+
+        if(i<counter){
+            circle.style.backgroundColor="green";
+            circle.style.borderWidth="0px";
+        
+        }
+        else{
+            circle.style.backgroundColor="white";
+            circle.style.borderWidth="3px";
+            
+        }
+    });
+}
+    //  next.onclick=function(){
+    //     // if(counter<pages_id_s.length-1){
+    //         if(counter<circles.length-1){
+
+    //         counter++;
+    //         circles[counter].style.backgroundColor="green";
+    //         // var section=document.querySelector(pages_id_s[counter]);
+    //         console.log(typeof(pages_id_s[counter]));
+    //         // page_slider.innerHTML=document.querySelector(pages_id_s[counter]).innerHTML;
+      
+    //     }
+      
+    //    }
+    //    prev.onclick=function(){
+    //        if(counter>-1){
+    //            if(counter!=0)
+    //                 { counter--;}
+    //         circles[counter].style.backgroundColor="white";
+    //     //     var section=document.getElementById(pages_id_s[counter]);
+    //     //     console.log(pages_id_s[counter]);
+    //     //     page_slider.innerHTML=section.innerHTML;
+    //         }
+    //     }
+
+     
+</script>
+</html>

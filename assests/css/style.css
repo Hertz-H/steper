@@ -1,0 +1,226 @@
+<style>
+    body{
+        direction: rtl;
+        margin-top:100px;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+    /* .img_container i{
+        display: inline-block;
+        width: 100px;
+        height:100px;
+
+    }
+    .img_container i img{
+        width:100%;
+        height:100%;
+    } */
+    .container{
+        width:90%;
+        margin: auto;
+    }
+    .checkout_cards_container{
+        display: flex;
+        justify-content: space-between;
+       
+    }
+    .products{
+        width:60%;
+        position: relative;
+        /* border: 1px solid grey; */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
+        border-radius: 10px;
+        padding:20px;
+        align-self: flex-start;
+    }
+    .basket_container{
+        width:30%;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
+        border-radius: 10px;
+        padding:20px;
+    }
+    .checkout_cards_container {
+      
+    }
+    .book_img_info{
+        display: inline-block;
+        width:60%;
+        
+    }
+    .book_img{
+        position: relative;
+        top: -48px;
+    
+    }
+    
+    .price{
+        position:absolute;
+        top:20px;
+        left:20px;
+        color:red;
+        font-weight: bold;
+    }
+    .currency,.currency_sum{
+        font-size: .7rem;
+        font-weight:normal;
+    }
+    .quantiy{
+        position:absolute;
+        bottom: 53px;
+        left:20px;
+        outline: 1px solid grey;
+        text-align: center;
+        
+    }
+    .quantiy span{
+        display: inline-block;
+    }
+    .quantiy span:last-of-type{
+      border-left: 1px grey solid;
+      background-color: rgb(158, 155, 155);
+    }
+    .quantiy span:first-of-type{
+       
+      /* background-color: rgb(158, 155, 155); */
+    }
+     .quantiy i{
+         display: block;
+     }
+    .product_note{
+        color:grey;
+        font-size: .7rem;
+        font-style: oblique;
+      
+    }
+    .delivery_note{
+        margin-top:10px;
+        padding:10px ;
+        background-color: bisque;
+        width:100%;
+        border-right: 4px yellow solid;
+        margin-bottom: 10px;
+    }
+    .colored{
+        color:blue;
+        display: block;
+    }
+    .delivery_note span:first-of-type{
+        font-weight: bold;
+    }
+    .delet{
+        font-weight: bold;
+        position: relative;
+    }
+     a{
+        text-decoration: none;
+        color:black;
+    }
+    .dot{
+        display: inline-flex;
+        align-items: center;
+        /* background-color: black; */
+        font-weight: lighter;
+        padding:3px;
+       
+        color:black;
+        border-radius: 50%;
+       
+    }
+    .upper_section >div{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        line-height: 1.5;
+    }
+    .basket_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 250px;
+    }
+    .basket_btn{
+        margin-top: 10px;
+        width:100%;
+        padding:.6rem;
+        border:none;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
+        color:white;
+        font-weight: bold;
+        background-color: red;
+        border-radius: 3px;
+    }
+    .policy_notation{
+        color: gray;
+        font-size: .8rem;
+    }
+    .colored_policy{
+        color:blue;
+    }
+    .currency_sum{
+        color:gray;
+        
+    }
+    .delivery_cost .cost_span{
+        color:green;
+        font-weight: bold;
+    }
+    .total{
+        font-weight: bold;
+        color:red;
+        font-size: 1.3rem;
+    }
+    .check_out_heading{
+        margin-bottom: 30px;
+        position: relative;
+        display: flex;
+    }
+    .check_out_heading span{
+        font-size: 2ex;
+        color:grey;
+        position: absolute;
+       bottom: 0;
+       right:70px;
+    }
+    .shoping_cart i{
+        margin-left:5px;
+    }
+    hr{
+        margin-bottom: 10px;
+    }
+    /* .delet:before{
+        content:"";
+        position: absolute;
+        width:10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: black;
+    } */
+    @media(max-width:768px){
+        .container{
+        width:90%;
+        margin: auto;
+    }
+    .checkout_cards_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+       
+    }
+    .products{
+        width:100%;
+       
+    }
+    .basket_container{
+        width:80%;
+
+        margin: 20px 0;
+    }
+    }
+    
+</style>
